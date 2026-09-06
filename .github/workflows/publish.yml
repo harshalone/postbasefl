@@ -1,0 +1,34 @@
+name: Publish to pub.dev
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+*"
+
+jobs:
+  publish:
+    permissions:
+      id-token: write # required for pub.dev OIDC authentication
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Verify tag matches pubspec.yaml version
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          PUBSPEC_VERSION="$(grep -m1 '^version:' pubspec.yaml | sed 's/version:[[:space:]]*//')"
+          if [ "$TAG_VERSION" != "$PUBSPEC_VERSION" ]; then
+            echo "Tag v$TAG_VERSION does not match pubspec.yaml version $PUBSPEC_VERSION"
+            exit 1
+          fi
+
+      - run: flutter pub get
+      - run: dart analyze
+      - run: flutter test
+
+      - name: Publish
+        run: dart pub publish --force
