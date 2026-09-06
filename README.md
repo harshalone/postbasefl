@@ -3,9 +3,9 @@
 The official Dart/Flutter client for [Postbase](https://www.getpostbase.com) — a self-hosted, open-source backend as a service.
 
 [![pub package](https://img.shields.io/pub/v/postbase)](https://pub.dev/packages/postbase)
-[![license](https://img.shields.io/github/license/harshalone/postbase-sdk-flutter)](https://github.com/harshalone/postbase-sdk-flutter/blob/main/LICENSE)
+[![license](https://img.shields.io/github/license/harshalone/postbasefl)](https://github.com/harshalone/postbasefl/blob/main/LICENSE)
 
-> **[getpostbase.com](https://www.getpostbase.com)** · [Documentation](https://www.getpostbase.com/docs) · [GitHub](https://github.com/harshalone/postbase-sdk-flutter)
+> **[getpostbase.com](https://www.getpostbase.com)** · [Documentation](https://www.getpostbase.com/docs) · [GitHub](https://github.com/harshalone/postbasefl)
 
 ---
 
