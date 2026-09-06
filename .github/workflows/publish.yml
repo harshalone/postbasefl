@@ -6,9 +6,7 @@ on:
       - "v[0-9]+.[0-9]+.[0-9]+*"
 
 jobs:
-  publish:
-    permissions:
-      id-token: write # required for pub.dev OIDC authentication
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,5 +28,19 @@ jobs:
       - run: dart analyze
       - run: flutter test
 
-      - name: Publish
-        run: dart pub publish --force
+  publish:
+    needs: test
+    # pub.dev's OIDC token exchange is scoped to a GitHub Actions environment
+    # named exactly "pub.dev" — this is required, not just a label.
+    environment: pub.dev
+    permissions:
+      id-token: write # required for pub.dev OIDC authentication
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - run: flutter pub get
+      - uses: dart-lang/setup-dart@v1
+      - run: dart pub publish --force
