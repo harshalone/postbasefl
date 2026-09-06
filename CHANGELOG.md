@@ -1,3 +1,9 @@
+## 0.1.1
+
+- No library changes. Adds a GitHub Actions workflow that publishes to pub.dev
+  automatically via OIDC when a `v<version>` tag is pushed — this release
+  validates that pipeline end-to-end.
+
 ## 0.1.0
 
 Initial release — Dart/Flutter port of [postbasejs](https://www.npmjs.com/package/postbasejs).
