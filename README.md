@@ -1,8 +1,8 @@
-# postbase
+# postbasefl
 
 The official Dart/Flutter client for [Postbase](https://www.getpostbase.com) — a self-hosted, open-source backend as a service.
 
-[![pub package](https://img.shields.io/pub/v/postbase)](https://pub.dev/packages/postbase)
+[![pub package](https://img.shields.io/pub/v/postbasefl)](https://pub.dev/packages/postbasefl)
 [![license](https://img.shields.io/github/license/harshalone/postbasefl)](https://github.com/harshalone/postbasefl/blob/main/LICENSE)
 
 > **[getpostbase.com](https://www.getpostbase.com)** · [Documentation](https://www.getpostbase.com/docs) · [GitHub](https://github.com/harshalone/postbasefl)
@@ -22,7 +22,7 @@ The official Dart/Flutter client for [Postbase](https://www.getpostbase.com) —
 
 Postbase is a self-hosted backend platform built on PostgreSQL. It gives you a database with a REST query API, authentication (password, magic link, OTP, OAuth), file storage, and row-level security — all running on your own infrastructure.
 
-`postbase` is the Dart/Flutter client SDK for interacting with your Postbase instance — the same chainable query builder as [`postbasejs`](https://www.npmjs.com/package/postbasejs) and [`postbasepy`](https://pypi.org/project/postbasepy/), idiomatic to Dart, and working in Flutter (iOS, Android, web, desktop) as well as plain Dart (server-side, CLI).
+`postbasefl` is the Dart/Flutter client SDK for interacting with your Postbase instance — the same chainable query builder as [`postbasejs`](https://www.npmjs.com/package/postbasejs) and [`postbasepy`](https://pypi.org/project/postbasepy/), idiomatic to Dart, and working in Flutter (iOS, Android, web, desktop) as well as plain Dart (server-side, CLI).
 
 ---
 
@@ -78,9 +78,9 @@ Postbase is a self-hosted backend platform built on PostgreSQL. It gives you a d
 ## Installation
 
 ```bash
-flutter pub add postbase
+flutter pub add postbasefl
 # or, for a plain Dart project (server-side / CLI):
-dart pub add postbase
+dart pub add postbasefl
 ```
 
 Works in Flutter (iOS, Android, web, macOS, Windows, Linux) and plain Dart. Built on [`package:http`](https://pub.dev/packages/http), so it runs anywhere Dart runs.
@@ -90,7 +90,7 @@ Works in Flutter (iOS, Android, web, macOS, Windows, Linux) and plain Dart. Buil
 ## Quick Start
 
 ```dart
-import 'package:postbase/postbase.dart';
+import 'package:postbasefl/postbasefl.dart';
 
 final postbase = createClient(
   'https://your-postbase-instance.com',
@@ -625,7 +625,7 @@ final result = await postbase.email.send(
 When running behind a Dart server framework (`shelf`, `dart_frog`, etc.) rather than in a Flutter app, you can forward the caller's session cookie to Postbase so RLS policies evaluate against the authenticated user instead of just the anon role. Implement a `CookieAdapter` bridging your framework's request/response to Postbase:
 
 ```dart
-import 'package:postbase/postbase.dart';
+import 'package:postbasefl/postbasefl.dart';
 
 class ShelfCookieAdapter implements CookieAdapter {
   ShelfCookieAdapter(this.request, this.responseHeaders);

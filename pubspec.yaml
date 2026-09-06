@@ -1,4 +1,4 @@
-name: postbase
+name: postbasefl
 description: >-
   The official Dart/Flutter client for Postbase — a self-hosted,
   open-source backend as a service built on PostgreSQL. REST query

@@ -3,7 +3,7 @@ import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
 import 'package:mocktail/mocktail.dart';
-import 'package:postbase/postbase.dart';
+import 'package:postbasefl/postbasefl.dart';
 import 'package:test/test.dart';
 
 import 'support/mock_client.dart';

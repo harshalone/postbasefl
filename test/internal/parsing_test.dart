@@ -1,5 +1,5 @@
-import 'package:postbase/postbase.dart';
-import 'package:postbase/src/internal/parsing.dart';
+import 'package:postbasefl/postbasefl.dart';
+import 'package:postbasefl/src/internal/parsing.dart';
 import 'package:test/test.dart';
 
 void main() {

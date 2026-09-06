@@ -5,7 +5,7 @@
 /// row-level security.
 ///
 /// ```dart
-/// import 'package:postbase/postbase.dart';
+/// import 'package:postbasefl/postbasefl.dart';
 ///
 /// final postbase = createClient(
 ///   'https://your-postbase-instance.com',

@@ -1,4 +1,4 @@
-import 'package:postbase/postbase.dart';
+import 'package:postbasefl/postbasefl.dart';
 
 Future<void> main() async {
   final postbase = createClient(
